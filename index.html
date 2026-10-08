@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PromoHub Mobile</title>
+    <meta
+      name="description"
+      content="Site responsivo para celular com anúncios configuráveis e elementos visuais agressivos."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand">PromoHub</div>
+        <button class="topbar-btn" id="openPromo">Oferta</button>
+      </header>
+
+      <main class="container">
+        <section class="hero">
+          <div class="hero-copy">
+            <span class="eyebrow">Mobile-first</span>
+            <h1>Seu negócio em destaque no celular.</h1>
+            <p>
+              Layout bonito, responsivo e pronto para capturar clientes com
+              anúncios fortes, promoções e chamadas visuais energéticas.
+            </p>
+            <div class="hero-actions">
+              <button class="primary" id="ctaButton">Ver oferta</button>
+              <button class="secondary" id="toggleAdMode">Ativar anuncio</button>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="mini-badge">HOT</div>
+            <h3>Oferta do dia</h3>
+            <p>50% OFF em qualquer plano + suporte premium.</p>
+            <div class="price-row">
+              <span class="old-price">R$ 149</span>
+              <strong>R$ 79</strong>
+            </div>
+            <button class="ghost" id="heroOffer">Quero aproveitar</button>
+          </div>
+        </section>
+
+        <section class="stats">
+          <div>
+            <strong>12k+</strong>
+            <span>cliques</span>
+          </div>
+          <div>
+            <strong>90%</strong>
+            <span>retorno</span>
+          </div>
+          <div>
+            <strong>24/7</strong>
+            <span>visibilidade</span>
+          </div>
+        </section>
+
+        <section class="cards">
+          <article class="card featured">
+            <span class="tag">+ Vendido</span>
+            <h3>Campanhas intensivas</h3>
+            <p>Captação rápida com CTA claro e blocos visuais de alto impacto.</p>
+          </article>
+
+          <article class="card">
+            <span class="tag">Rápido</span>
+            <h3>Entrega mobile</h3>
+            <p>Página otimizada para telas pequenas e fácil navegação.</p>
+          </article>
+
+          <article class="card">
+            <span class="tag">Segura</span>
+            <h3>Marca forte</h3>
+            <p>Estrutura profissional para posicionar sua oferta na web.</p>
+          </article>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Configurar anúncio</h2>
+            <span class="status-dot" id="adStatusDot"></span>
+          </div>
+
+          <form id="adForm" class="ad-form">
+            <label>
+              Título do anúncio
+              <input id="adTitle" type="text" value="Oferta imperdível" maxlength="40" />
+            </label>
+
+            <label>
+              Texto do anúncio
+              <textarea id="adText" rows="3" maxlength="120">Aproveite agora e ganhe bônus exclusivos por tempo limitado.</textarea>
+            </label>
+
+            <div class="split-fields">
+              <label>
+                Intervalo (segundos)
+                <input id="adInterval" type="number" min="3" max="60" value="8" />
+              </label>
+
+              <label>
+                Cor do destaque
+                <input id="adColor" type="color" value="#ff7a18" />
+              </label>
+            </div>
+
+            <button type="submit" class="primary full">Salvar anúncio</button>
+          </form>
+        </section>
+
+        <section class="bottom-banner" id="bottomBanner">
+          <span>🔥</span>
+          <p>Última chance: promoção ativa agora mesmo!</p>
+          <button id="bannerBtn">Ver</button>
+        </section>
+      </main>
+    </div>
+
+    <div class="floating-ad" id="floatingAd">
+      <span>🔥</span>
+      <strong id="floatingTitle">Oferta especial</strong>
+    </div>
+
+    <div class="modal-backdrop" id="adModal" aria-hidden="true">
+      <div class="ad-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="close-btn" id="closeAd" aria-label="Fechar anúncio">×</button>
+        <div class="ad-icon">⚡</div>
+        <p class="ad-kicker">Anúncio importante</p>
+        <h3 id="modalTitle">Oferta imperdível</h3>
+        <p id="modalText">
+          Aproveite agora e ganhe bônus exclusivos por tempo limitado.
+        </p>
+        <button class="primary full modal-cta">Eu quero</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
